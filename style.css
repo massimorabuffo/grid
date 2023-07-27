@@ -1,0 +1,42 @@
+.calc{
+    border: 1px solid black;
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(6, 1fr);
+    justify-content: center;
+    grid-template-areas: 
+      "display display display display"
+      "signs signs signs signs"
+      "number number number equal"
+      "number number number equal"
+      "number number number equal"
+      "number number number equal";
+}
+
+.number{
+    grid-area: number;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.calc .display, .calc .signs div, 
+.calc .number div, .calc .equal{
+    /* padding: 3px; */
+    border: 2px solid black;
+    text-align: center;
+}
+
+.signs{
+    grid-area: signs;
+    display: grid;
+    grid-template-rows: repeat(1, 1fr)
+}
+
+.display{
+    grid-area: display;
+}
+
+.equal{
+    grid-area: equal;
+    
+}
