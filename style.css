@@ -1,42 +1,77 @@
-.calc{
-    border: 1px solid black;
-    display: grid;
-    grid-template-columns: repeat(4, 100px);
-    grid-template-rows: repeat(6, 1fr);
-    justify-content: center;
-    grid-template-areas: 
-      "display display display display"
-      "signs signs signs signs"
-      "number number number equal"
-      "number number number equal"
-      "number number number equal"
-      "number number number equal";
+:root{
+    --border-color: grey;
 }
 
-.number{
-    grid-area: number;
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+.calc{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas: 
+    "display display display display"
+    "signs signs signs signs"
+    "number number number equal"
+    "number number number equal"
+    "number number number equal"
+    "number number number equal";
 }
 
-.calc .display, .calc .signs div, 
-.calc .number div, .calc .equal{
-    /* padding: 3px; */
-    border: 2px solid black;
-    text-align: center;
+.display{
+    grid-area: display;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    text-align: right;
+    background-color: grey;
+    color: white;
+    padding: 10px;
+    font-size: large;
 }
 
 .signs{
     grid-area: signs;
     display: grid;
-    grid-template-rows: repeat(1, 1fr)
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(1, 4fr);
+    background-color: rgba(196, 205, 212, 0.795);
+    font-weight: bolder;
 }
 
-.display{
-    grid-area: display;
+.number{
+    grid-area: number;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    justify-items: center;
+    align-items: center;
+    background-color: rgba(244, 245, 245, 0.795)
 }
 
 .equal{
     grid-area: equal;
-    
+    border: 1px solid var(--border-color);
+    border-bottom-right-radius: 10px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    font-weight: bolder;
+    background-color: rgb(227, 74, 74);
+}
+
+.signs div, .number div{
+    text-align: center;
+    border: 1px solid var(--border-color);
+    height: 50px;
+    width: 50px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    font-weight: bolder;
+}
+
+#zero{
+    border-bottom-left-radius: 10px;
 }
